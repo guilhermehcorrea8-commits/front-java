@@ -10,206 +10,223 @@
 
 <body>
 
-    <h1>Lista de Exercícios - DOM</h1>
+<h1>Lista de Exercícios - DOM</h1>
 
-    <h2>1 - Mostrar mensagem</h2>
-    <button onclick="mostrarMensagem()">Clique aqui</button>
-    <p id="mensagem"></p>
+<div class="questao q1">
+<h2>1 - Mostrar mensagem</h2>
+<button onclick="mostrarMensagem()">Clique aqui</button>
+<p id="mensagem"></p>
+</div>
 
-    <br>
+<div class="questao q2">
+<h2>2 - Mostrar nome digitado</h2>
+<input type="text" id="nome" placeholder="Digite seu nome">
+<button onclick="mostrarNome()">Mostrar Nome</button>
+<p id="resultadoNome"></p>
+</div>
 
-    <h2>2 - Mostrar nome digitado</h2>
-    <input type="text" id="nome" placeholder="Digite seu nome">
-    <button onclick="mostrarNome()">Mostrar Nome</button>
-    <p id="resultadoNome"></p>
+<div class="questao q3">
+<h2>3 - Soma de dois números</h2>
+<input type="number" id="soma1" placeholder="Número 1">
+<input type="number" id="soma2" placeholder="Número 2">
+<button onclick="somar()">Somar</button>
+<p id="resultadoSoma"></p>
+</div>
 
-    <br>
+<div class="questao q4">
+<h2>4 - Contador de cliques</h2>
+<button onclick="contar()">Clique aqui</button>
+<p id="contador">Cliques: 0</p>
+</div>
 
-    <h2>3 - Soma de dois números</h2>
-    <input type="number" id="soma1" placeholder="Número 1">
-    <input type="number" id="soma2" placeholder="Número 2">
-    <button onclick="somar()">Somar</button>
-    <p id="resultadoSoma"></p>
+<div class="questao q5">
+<h2>5 - Alterar cor do texto</h2>
+<p id="textoCor">Texto para mudar de cor</p>
+<button onclick="vermelho()">Vermelho</button>
+<button onclick="azul()">Azul</button>
+</div>
 
-    <br>
+<div class="questao q6">
+<h2>6 - Multiplicação</h2>
+<input type="number" id="mult1" placeholder="Número 1">
+<input type="number" id="mult2" placeholder="Número 2">
+<button onclick="multiplicar()">Multiplicar</button>
+<p id="resultadoMult"></p>
+</div>
 
-    <h2>4 - Contador de cliques</h2>
-    <button onclick="contar()">Clique aqui</button>
-    <p id="contador">Cliques: 0</p>
+<div class="questao q7">
+<h2>7 - Mostrar idade</h2>
+<input type="number" id="idade">
+<button onclick="verIdade()">Ver idade</button>
+<p id="resultadoIdade"></p>
+</div>
 
-    <br>
+<div class="questao q8">
+<h2>8 - Alterar texto</h2>
+<p id="textoOriginal">Texto original</p>
+<button onclick="alterarTexto()">Alterar texto</button>
+</div>
 
-    <h2>5 - Alterar cor do texto</h2>
-    <p id="textoCor">Texto para mudar de cor</p>
-    <button onclick="vermelho()">Vermelho</button>
-    <button onclick="azul()">Azul</button>
+<div class="questao q9">
+<h2>9 - Mostrar ou esconder texto</h2>
+<p id="textoToggle">Este texto pode aparecer ou desaparecer</p>
+<button onclick="toggleTexto()">Mostrar / Esconder</button>
+</div>
 
-    <br>
+<div class="questao calc">
+<h2>Calculadora</h2>
 
-    <h2>6 - Multiplicação</h2>
-    <input type="number" id="mult1" placeholder="Número 1">
-    <input type="number" id="mult2" placeholder="Número 2">
-    <button onclick="multiplicar()">Multiplicar</button>
-    <p id="resultadoMult"></p>
+<input type="number" id="num1" placeholder="Número 1">
+<input type="number" id="num2" placeholder="Número 2">
 
-    <br>
+<br><br>
 
-    <h2>7 - Mostrar idade</h2>
-    <input type="number" id="idade">
-    <button onclick="verIdade()">Ver idade</button>
-    <p id="resultadoIdade"></p>
+<button onclick="calcSomar()">+</button>
+<button onclick="calcSub()">-</button>
+<button onclick="calcMult()">*</button>
+<button onclick="calcDiv()">/</button>
 
-    <br>
+<h3>Resultado: <span id="resultado">0</span></h3>
+</div>
 
-    <h2>8 - Alterar texto</h2>
-    <p id="textoOriginal">Texto original</p>
-    <button onclick="alterarTexto()">Alterar texto</button>
+<script>
 
-    <br>
+function mostrarMensagem(){
+document.getElementById("mensagem").textContent="Olá, seja bem-vindo!";
+}
 
-    <h2>9 - Mostrar ou esconder texto</h2>
-    <p id="textoToggle">Este texto pode aparecer ou desaparecer</p>
-    <button onclick="toggleTexto()">Mostrar / Esconder</button>
+function mostrarNome(){
+let nome=document.getElementById("nome").value;
+document.getElementById("resultadoNome").textContent="Olá, "+nome;
+}
 
-    <br>
+function somar(){
+let n1=Number(document.getElementById("soma1").value);
+let n2=Number(document.getElementById("soma2").value);
 
-    <h2>Calculadora</h2>
-    <input type="number" id="num1" placeholder="Número 1">
-    <input type="number" id="num2" placeholder="Número 2">
+let resultado=n1+n2;
 
-    <br>
+document.getElementById("resultadoSoma").textContent="Resultado: "+resultado;
+}
 
-    <button onclick="calcSomar()">+</button>
-    <button onclick="calcSub()">-</button>
-    <button onclick="calcMult()">*</button>
-    <button onclick="calcDiv()">/</button>
+let cliques=0;
 
-    <h3>Resultado: <span id="resultado">0</span></h3>
+function contar(){
+cliques++;
+document.getElementById("contador").textContent="Cliques: "+cliques;
+}
 
-    <script>
+function vermelho(){
+document.getElementById("textoCor").style.color="red";
+}
 
-        function mostrarMensagem() {
-            document.getElementById("mensagem").textContent = "Olá, seja bem-vindo!";
-        }
+function azul(){
+document.getElementById("textoCor").style.color="blue";
+}
 
-        function mostrarNome() {
-            let nome = document.getElementById("nome").value;
-            document.getElementById("resultadoNome").textContent = "Olá, " + nome;
-        }
+function multiplicar(){
+let n1=Number(document.getElementById("mult1").value);
+let n2=Number(document.getElementById("mult2").value);
 
-        function somar() {
-            let n1 = Number(document.getElementById("soma1").value);
-            let n2 = Number(document.getElementById("soma2").value);
+let resultado=n1*n2;
 
-            let resultado = n1 + n2;
+document.getElementById("resultadoMult").textContent="Resultado: "+resultado;
+}
 
-            document.getElementById("resultadoSoma").textContent = "Resultado: " + resultado;
-        }
+function verIdade(){
+let idade=document.getElementById("idade").value;
 
-        let cliques = 0;
+document.getElementById("resultadoIdade").textContent="Sua idade é: "+idade+" anos";
+}
 
-        function contar() {
-            cliques++;
-            document.getElementById("contador").textContent = "Cliques: " + cliques;
-        }
+function alterarTexto(){
+document.getElementById("textoOriginal").textContent="Texto alterado com JavaScript";
+}
 
-        function vermelho() {
-            document.getElementById("textoCor").style.color = "red";
-        }
+let visivel=true;
 
-        function azul() {
-            document.getElementById("textoCor").style.color = "blue";
-        }
+function toggleTexto(){
 
-        function multiplicar() {
-            let n1 = Number(document.getElementById("mult1").value);
-            let n2 = Number(document.getElementById("mult2").value);
+let texto=document.getElementById("textoToggle");
 
-            let resultado = n1 * n2;
+if(visivel){
+texto.style.display="none";
+visivel=false;
+}else{
+texto.style.display="block";
+visivel=true;
+}
 
-            document.getElementById("resultadoMult").textContent = "Resultado: " + resultado;
-        }
+}
 
-        function verIdade() {
-            let idade = document.getElementById("idade").value;
+function pegarValores(){
 
-            document.getElementById("resultadoIdade").textContent =
-                "Sua idade é: " + idade + " anos";
-        }
+let n1=Number(document.getElementById("num1").value);
+let n2=Number(document.getElementById("num2").value);
 
-        function alterarTexto() {
-            document.getElementById("textoOriginal").textContent =
-                "Texto alterado com JavaScript";
-        }
+if(isNaN(n1)||isNaN(n2)){
+mostrarResultado("Digite números válidos");
+return null;
+}
 
-        let visivel = true;
+return {n1,n2};
 
-        function toggleTexto() {
-            let texto = document.getElementById("textoToggle");
+}
 
-            if (visivel) {
-                texto.style.display = "none";
-                visivel = false;
-            } else {
-                texto.style.display = "block";
-                visivel = true;
-            }
-        }
+function calcSomar(){
 
-        function pegarValores() {
-            let n1 = Number(document.getElementById("num1").value);
-            let n2 = Number(document.getElementById("num2").value);
+let valores=pegarValores();
+if(!valores)return;
 
-            if (isNaN(n1) || isNaN(n2)) {
-                mostrarResultado("Digite números válidos");
-                return null;
-            }
+let soma=valores.n1+valores.n2;
 
-            return { n1, n2 };
-        }
+mostrarResultado(soma);
 
-        function calcSomar() {
-            let valores = pegarValores();
-            if (!valores) return;
+}
 
-            let soma = valores.n1 + valores.n2;
-            mostrarResultado(soma);
-        }
+function calcSub(){
 
-        function calcSub() {
-            let valores = pegarValores();
-            if (!valores) return;
+let valores=pegarValores();
+if(!valores)return;
 
-            let subt = valores.n1 - valores.n2;
-            mostrarResultado(subt);
-        }
+let subt=valores.n1-valores.n2;
 
-        function calcMult() {
-            let valores = pegarValores();
-            if (!valores) return;
+mostrarResultado(subt);
 
-            let multi = valores.n1 * valores.n2;
-            mostrarResultado(multi);
-        }
+}
 
-        function calcDiv() {
-            let valores = pegarValores();
-            if (!valores) return;
+function calcMult(){
 
-            if (valores.n2 === 0) {
-                mostrarResultado("Erro: divisão por 0");
-                return;
-            }
+let valores=pegarValores();
+if(!valores)return;
 
-            let div = valores.n1 / valores.n2;
-            mostrarResultado(div);
-        }
+let multi=valores.n1*valores.n2;
 
-        function mostrarResultado(valor) {
-            document.getElementById("resultado").textContent = valor;
-        }
+mostrarResultado(multi);
 
-    </script>
+}
+
+function calcDiv(){
+
+let valores=pegarValores();
+if(!valores)return;
+
+if(valores.n2===0){
+mostrarResultado("Erro: divisão por 0");
+return;
+}
+
+let div=valores.n1/valores.n2;
+
+mostrarResultado(div);
+
+}
+
+function mostrarResultado(valor){
+document.getElementById("resultado").textContent=valor;
+}
+
+</script>
 
 </body>
 

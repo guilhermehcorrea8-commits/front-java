@@ -1,24 +1,118 @@
-body{
-    font-family: Arial;
-    background-color: #f4f4f4;
-    margin: 40px;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
+
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(rgb(230,235,240), rgb(210,220,235));
+    margin:40px;
+}
+
+/* título */
 
 h1{
-    color: #333;
+    text-align:center;
+    color:rgb(25,50,110);
+    margin-bottom:30px;
 }
 
-button{
-    padding: 8px 15px;
-    margin: 5px;
-    cursor: pointer;
+/* cards das questões */
+
+.questao{
+    padding:20px;
+    margin-bottom:25px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+    transition:0.3s;
 }
+
+.questao:hover{
+    transform:scale(1.02);
+}
+
+/* cores diferentes */
+
+.q1{
+    background-color:rgb(255,230,230);
+    border-left:8px solid rgb(220,70,70);
+}
+
+.q2{
+    background-color:rgb(230,255,230);
+    border-left:8px solid rgb(60,170,80);
+}
+
+.q3{
+    background-color:rgb(230,240,255);
+    border-left:8px solid rgb(60,100,200);
+}
+
+.q4{
+    background-color:rgb(255,245,220);
+    border-left:8px solid rgb(210,150,40);
+}
+
+.q5{
+    background-color:rgb(245,230,255);
+    border-left:8px solid rgb(150,80,200);
+}
+
+.q6{
+    background-color:rgb(230,255,250);
+    border-left:8px solid rgb(50,160,160);
+}
+
+.q7{
+    background-color:rgb(255,235,220);
+    border-left:8px solid rgb(200,110,60);
+}
+
+.q8{
+    background-color:rgb(235,235,235);
+    border-left:8px solid rgb(120,120,120);
+}
+
+.q9{
+    background-color:rgb(230,245,255);
+    border-left:8px solid rgb(50,130,200);
+}
+
+.calc{
+    background-color:rgb(250,230,255);
+    border-left:8px solid rgb(170,70,170);
+}
+
+/* inputs */
 
 input{
-    padding: 5px;
-    margin: 5px;
+    padding:8px;
+    margin:6px;
+    border-radius:6px;
+    border:1px solid rgb(180,180,180);
 }
 
-hr{
-    margin: 20px 0;
+/* botões */
+
+button{
+    padding:8px 14px;
+    border:none;
+    border-radius:6px;
+    background-color:rgb(70,130,180);
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background-color:rgb(40,90,150);
+    transform:scale(1.05);
+}
+
+/* resultado */
+
+p{
+    margin-top:10px;
+    font-weight:bold;
 }
